@@ -73,5 +73,8 @@ function getExchangeRate(){
 
         let totalExchangeRate = (amountVal * exchangeRate).toFixed(2);
         exchangeRateTxt.innerText = `${amountVal} ${fromCurrency.value} = ${totalExchangeRate} ${toCurrency.value}`;
+    }).catch(() => {
+        // If user is online or any other error occurred while fetching data then catch function will run
+        exchangeRateTxt.innerText = "Something went wrong";
     });
 }
